@@ -1,0 +1,67 @@
+---
+---
+<section id="region" class="content-section section-light">
+    <div class="content">
+        <img src="" alt="History Image">
+        <div class="text-box">
+            <h2>Un nuevo area por explorar</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repellat, excepturi ratione rerum rem esse omnis natus dolore! Magni, assumenda?</p>
+        </div>
+    </div>
+</section>
+<style>
+    .content-section {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 2rem;
+        align-items: center;
+    }
+
+    .section-dark {
+        background-color: #444;
+        color: #fff;
+    }
+
+    .section-light {
+        background-color: #f4f4f4;
+        color: #333;
+    }
+
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        width: 100%;
+    }
+
+    .content img {
+        flex: 1 1 40%;
+        max-width: 100%;
+        border-radius: 8px;
+    }
+
+    .content .text-box {
+        flex: 1 1 50%;
+    }
+
+    .content .text-box h2 {
+        margin-bottom: 1rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .content {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .content img {
+            flex: 1 1 100%;
+        }
+
+        .content .text-box {
+            flex: 1 1 100%;
+        }
+    }
+</style>

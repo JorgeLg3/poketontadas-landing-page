@@ -1,0 +1,87 @@
+---
+import { Image } from "astro:assets";
+import LinkLienImg from "../assets/imgs/Link_and_Lien.jpg"
+---
+<section id="characters" class="content-section section-light">
+    <div class="content">
+        <div class="image-row">
+            <div class="image-container">
+                <Image src={LinkLienImg} alt="Characters Img" width={400}/>
+            </div>
+        </div>
+        <div class="text-row">
+            <h2>Conoce a los protagonistas</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repellat, excepturi ratione rerum rem esse omnis natus dolore! Magni, assumenda?</p>
+        </div>
+    </div>
+</section>
+<style>
+    .content-section {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 2rem;
+        align-items: center;
+    }
+
+    .section-dark {
+        background-color: #444;
+        color: #fff;
+    }
+
+    .section-light {
+        background-color: #fff;
+        color: #333;
+    }
+
+    /* .content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        max-width: 80rem;
+    } */
+
+    .text-row{
+        align-self: center;
+    }
+
+    .image-row{
+        margin-top: 10px;
+        padding: 3rem;
+    }
+
+    .image-container{
+        position: relative;
+        margin:auto;
+        max-width: 35rem;
+    }
+
+    Image{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        border-radius: 0.5rem;
+    }
+
+    .content .text-row h2 {
+        margin-bottom: 1rem;
+    }
+
+    /* Responsive Design */
+    @media (min-width: 768px) {
+        .content {
+            flex-direction: row;
+            display: flex;
+            gap: 16px;
+        }
+
+        .text-row{
+            flex-basis: 50%;
+        }
+
+        .image-row{
+            flex-basis: 50%;
+            margin-top: 0;
+        }
+    }
+</style>
