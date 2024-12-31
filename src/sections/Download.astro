@@ -1,18 +1,17 @@
 ---
 import { Image } from "astro:assets";
-import MapImg from "../assets/imgs/map.png"
+import LinkLienImg from "../assets/imgs/Link_and_Lien.jpg"
 ---
-<section id="region" class="section section-dark">
+<section id="download" class="section section-light">
+    <h2>Disponible Próximamente</h2>
     <div  class="content-section">
         <div class="image-row">
             <div class="image-container">
-                <Image src={MapImg} alt="Characters Img" width={300}/>
+                <Image src={LinkLienImg} alt="Characters Img" width={300}/>
             </div>
         </div>
         <div class="text-row">
             <div class="text-container">
-                <h2>Explora la Región de Tontaria</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repellat, excepturi ratione rerum rem esse omnis natus dolore! Magni, assumenda?</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repellat, excepturi ratione rerum rem esse omnis natus dolore! Magni, assumenda?</p>
             </div>
         </div>
@@ -22,6 +21,8 @@ import MapImg from "../assets/imgs/map.png"
     .section{
         display: flex;
         justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
 
     .content-section {
@@ -48,10 +49,9 @@ import MapImg from "../assets/imgs/map.png"
     }
 
     .text-container {
-        color: #000;
-        background-color: #fff;
-        padding: 2rem;
-        border-radius: 3px;
+        /* border: #000 solid 1px;
+        border-radius: 3px; */
+        padding: 1.8rem;
     }
 
     .text-container h2 {
@@ -64,21 +64,20 @@ import MapImg from "../assets/imgs/map.png"
 
     .image-row{
         margin-top: 10px;
-        padding: 3rem 0;
+        padding: 3rem;
     }
 
     .image-container{
         position: relative;
         margin:auto;
         max-width: 35rem;
-        background-color: yellow;
     }
 
     Image{
         margin-left: auto;
         margin-right: auto;
         width: 100%;
-        border-radius: 5px;
+        border-radius: 0.5rem;
     }
 
     .content .text-row h2 {
@@ -88,10 +87,9 @@ import MapImg from "../assets/imgs/map.png"
     /* Responsive Design - full screen */
     @media (min-width: 768px) {
         .content-section {
-            flex-direction: row-reverse;
+            flex-direction: row;
             display: flex;
             gap: 16px;
-            padding: 3rem 1rem;
         }
 
         .text-row{
@@ -101,7 +99,6 @@ import MapImg from "../assets/imgs/map.png"
         .image-row{
             flex-basis: 50%;
             margin-top: 0;
-            margin-left: -56px;
         }
     }
 </style>
