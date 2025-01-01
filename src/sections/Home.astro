@@ -22,17 +22,17 @@ import Button from "../components/Button.astro";
     <div class="content-section">
         <Image src={LogoImg} alt="" height={250} />
         <div class="hero">
-            <p>¡Preparate para la aventura de tu vida!</p>
+            <h1>¡Prepárate para la aventura de tu vida!</h1>
             <div class="buttons">
-                <Button title="Descarga ya!" />
-                <Button title="Seguir leyendo" />
+                <Button title="Descarga" />
+                <Button title="Saber más" />
             </div>
         </div>
     </div>
 </section>
 <style>
     #home{
-        min-height: 600px;
+        height: 700px;
         position: relative;
         display: flex;
     }
@@ -66,13 +66,17 @@ import Button from "../components/Button.astro";
         height: auto;
         width: 100%;
         flex-direction: column;
+        justify-content: space-between;
     }
 
     .hero{
         color: var(--white);
-        margin-top: 60px;
-        font-size: 22px;
         text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .hero h1{
+        font-weight: 500;
     }
 
     .buttons{
@@ -84,52 +88,10 @@ import Button from "../components/Button.astro";
         justify-content: center;
     }
 
-    /*to delete */
-    .section-dark {
-        background-color: var(--lightblue);
-        color: var(--darkblue);
-    }
-
-    .section-light {
-        background-color: var(--white);
-        color: var(--darkblue);
-    }
-
-    .content {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        align-items: center;
-        width: 100%;
-    }
-
-    .content img {
-        flex: 1 1 40%;
-        max-width: 100%;
-        border-radius: 8px;
-    }
-
-    .content .text-box {
-        flex: 1 1 50%;
-    }
-
-    .content .text-box h2 {
-        margin-bottom: 1rem;
-    }
+    
 
     /* Responsive Design */
     @media (max-width: 768px) {
-        .content {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .content img {
-            flex: 1 1 100%;
-        }
-
-        .content .text-box {
-            flex: 1 1 100%;
-        }
+        
     }
 </style>

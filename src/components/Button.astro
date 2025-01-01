@@ -5,13 +5,15 @@ const { title, class: className, ...rest } = Astro.props
 
 <style>
     .button{
-        background-color: var(--accent);
+        background-color: var(--darkblue);
         border: none;
         font-family: "Poppins", sans-serif;
         color: var(--white);
-        padding: 0.2rem 2rem;
+        padding: 0.2rem 1rem;
+        min-width: 200px;
         font-size: 1.4rem;
         text-transform: uppercase;
         border-radius: 3px;
+        font-weight: 600;
     }
 </style>
