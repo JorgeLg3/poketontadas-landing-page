@@ -13,7 +13,11 @@ import Button from "../components/Button.astro";
         </div>
         <div class="text-row">
             <div class="text-container">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repellat, excepturi ratione rerum rem esse omnis natus dolore! Magni, assumenda?</p>
+                <p>¡Descarga ya el juego y comienza tu aventura!</p>
+                <p>
+                    El mundo de los Pokémon te espera: 
+                    entrena a tu equipo, recorre la Región de Tontaria y disfruta de las nuevas funcionalidades multijugador.
+                </p>
                 <Button title="Descarga" class="download-button"/>
                 <span class="alert">Lanzamiento el 10/01/25</span>
             </div>
@@ -65,6 +69,7 @@ import Button from "../components/Button.astro";
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
     }
 
     .text-container h2 {
@@ -99,6 +104,7 @@ import Button from "../components/Button.astro";
         background-color: var(--accent);
         filter: blur(2px);
         position: relative;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
     }
 
     .alert{

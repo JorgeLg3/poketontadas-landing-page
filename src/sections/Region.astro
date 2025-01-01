@@ -12,8 +12,15 @@ import MapImg from "../assets/imgs/map.png"
         <div class="text-row">
             <div class="text-container">
                 <h2>Explora la Región de Tontaria</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repellat, excepturi ratione rerum rem esse omnis natus dolore! Magni, assumenda?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repellat, excepturi ratione rerum rem esse omnis natus dolore! Magni, assumenda?</p>
+                <div class="accent-line"></div>
+                <p>
+                    Una nueva región por explorar, coge tu mochila y lánzate a la aventura. 
+                    Nuevas localizaciones, viejos conocidos y secretos ocultos aguardan en tu camino.
+                </p>
+                <p>
+                    Preparaté para embarcarte en un viaje que te llevará a recorrer cada rincón de Tontaría en busca de nuevas pistas.
+                    Solo los entrenadores más habilidosos serán capaces de alzarse victoriosos.
+                </p>
             </div>
         </div>
     </div>
@@ -55,6 +62,12 @@ import MapImg from "../assets/imgs/map.png"
         border-radius: 3px;
     }
 
+    .accent-line{
+        width: 80px;
+        height: 4px;
+        background: var(--accent);
+    }
+
     .text-container h2 {
         
     }
@@ -94,6 +107,10 @@ import MapImg from "../assets/imgs/map.png"
 
         .text-row{
             flex-basis: 50%;
+        }
+
+        .text-container{
+            padding-right: 4rem;
         }
 
         .image-row{

@@ -85,7 +85,8 @@ import Button from "../components/Button.astro";
     .buttons{
         margin-top: 3rem;
         display: flex;
-        gap: 1rem;
+        row-gap: 0.4rem; /* change to 1 when alert removed */
+        column-gap: 1rem;
         align-items: flex-start;
         flex-wrap: wrap;
         justify-content: center;
@@ -97,13 +98,19 @@ import Button from "../components/Button.astro";
         border: 3px solid var(--darkblue);
     }
 
+    .hollow-button:hover{
+        background-color: var(--darkblue);
+    }
+
     .alert{
         color: var(--accent);
         font-size: 10px;
     }    
 
     /* Responsive Design */
-    @media (max-width: 768px) {
-        
+    @media (min-width: 768px) {
+        .buttons{
+            
+        }
     }
 </style>
