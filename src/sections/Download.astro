@@ -15,6 +15,7 @@ import Button from "../components/Button.astro";
             <div class="text-container">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repellat, excepturi ratione rerum rem esse omnis natus dolore! Magni, assumenda?</p>
                 <Button title="Descarga" class="download-button"/>
+                <span class="alert">Lanzamiento el 10/01/25</span>
             </div>
         </div>
     </div>
@@ -95,7 +96,21 @@ import Button from "../components/Button.astro";
 
     .download-button{
         margin-top: 2rem;
-        background-color: var(--accent)
+        background-color: var(--accent);
+        filter: blur(2px);
+        position: relative;
+    }
+
+    .alert{
+        position: relative;
+        margin-top: -30px;
+        font-weight: 600;
+    }
+
+    .download-button:hover {
+        /* background-color: var(--accent2); */
+        background-color: var(--accent);
+        cursor:default;
     }
 
     /* Responsive Design - full screen */
@@ -116,7 +131,7 @@ import Button from "../components/Button.astro";
             margin-top: 0;
         }
 
-        .download-button{
+        .download-button, .alert{
             align-self: flex-end;
             margin-right: -70px;
         }

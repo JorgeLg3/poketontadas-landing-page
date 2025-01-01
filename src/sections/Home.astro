@@ -24,8 +24,11 @@ import Button from "../components/Button.astro";
         <div class="hero">
             <h1>¡Prepárate para la aventura de tu vida!</h1>
             <div class="buttons">
-                <Button title="Descarga" />
-                <Button title="Saber más" />
+                <div class="download-container">
+                    <Button title="Descarga*" hreference="#download"/>
+                    <span class="alert">*Próximamente</span>
+                </div>
+                <Button title="Saber más" hreference="#characters" class="hollow-button"/>
             </div>
         </div>
     </div>
@@ -83,12 +86,21 @@ import Button from "../components/Button.astro";
         margin-top: 3rem;
         display: flex;
         gap: 1rem;
-        align-items: center;
+        align-items: flex-start;
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    
+    .hollow-button{
+        background: none;
+        color: var(--darkblue);
+        border: 3px solid var(--darkblue);
+    }
+
+    .alert{
+        color: var(--accent);
+        font-size: 10px;
+    }    
 
     /* Responsive Design */
     @media (max-width: 768px) {

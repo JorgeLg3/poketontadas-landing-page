@@ -1,7 +1,7 @@
 ---
-const { title, class: className, ...rest } = Astro.props
+const { title, hreference, class: className, ...rest } = Astro.props
 ---
-<button class:list={["button", className]} {...rest}>{title}</button>
+<a class:list={["button", className]} {...rest} href={hreference}>{title}</a>
 
 <style>
     .button{
@@ -15,5 +15,17 @@ const { title, class: className, ...rest } = Astro.props
         text-transform: uppercase;
         border-radius: 3px;
         font-weight: 600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+        box-sizing: border-box;
+        height: 45px;
+    }
+
+    .button:hover{
+        background-color: var(--darkblue2);
+        cursor: pointer;
+        color: #fff;
     }
 </style>
