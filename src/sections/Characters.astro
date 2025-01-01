@@ -1,12 +1,12 @@
 ---
-import { Image } from "astro:assets";
-import LinkLienImg from "../assets/imgs/Link_and_Lien.jpg"
+import { Image, Picture } from "astro:assets";
+import LinkLienImg from "../assets/imgs/Link_and_Lien.png"
 ---
 <section id="characters" class="section section-light">
     <div  class="content-section">
         <div class="image-row">
             <div class="image-container">
-                <Image src={LinkLienImg} alt="Characters Img" width={300}/>
+                <Picture class:list={"image"} src={LinkLienImg} alt="Characters Img" height={300}/>
             </div>
         </div>
         <div class="text-row">
@@ -38,24 +38,16 @@ import LinkLienImg from "../assets/imgs/Link_and_Lien.jpg"
     }
 
     .section-light {
-        background-color: #fff;
-        color: #333;
+        background-color: var(--white);
+        color: var(--darkblue);
     }
-
-    /* .content {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        align-items: center;
-        max-width: 80rem;
-    } */
 
     .text-row{
         padding: 0rem;
     }
 
     .text-container {
-        border: #000 solid 1px;
+        border: var(--accent) solid 2px;
         border-radius: 3px;
         padding: 1.8rem;
     }
@@ -68,22 +60,20 @@ import LinkLienImg from "../assets/imgs/Link_and_Lien.jpg"
         margin-top: 1rem;
     }
 
+
     .image-row{
-        margin-top: 10px;
-        padding: 3rem;
     }
 
     .image-container{
-        position: relative;
-        margin:auto;
-        max-width: 35rem;
+        /* background-color: yellow; */
+        display: flex;
+        justify-content: center;
     }
 
-    Image{
+    .image{
+        border-radius: 5px;
         margin-left: auto;
         margin-right: auto;
-        width: 100%;
-        border-radius: 0.5rem;
     }
 
     .content .text-row h2 {
@@ -96,6 +86,7 @@ import LinkLienImg from "../assets/imgs/Link_and_Lien.jpg"
             flex-direction: row;
             display: flex;
             gap: 16px;
+            padding: 3rem 1rem;
         }
 
         .text-row{

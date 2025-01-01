@@ -1,6 +1,10 @@
 ---
+import { Image, Picture } from "astro:assets";
+import LogoImg from "../assets/imgs/logo.svg"
+import introVideo from "../assets/videos/intro.mp4"
+import Button from "../components/Button.astro";
 ---
-<section id="home" class="content-section section-dark">
+<!-- <section id="home" class="content-section section-dark">
     <div class="content">
         <img src="" alt="Home Image">
         <div class="text-box">
@@ -8,23 +12,87 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repellat, excepturi ratione rerum rem esse omnis natus dolore! Magni, assumenda?</p>
         </div>
     </div>
+</section> -->
+<section id="home">
+    <div class="fullscreen-bg">
+        <video loop muted autoplay class="fullscreen-video">
+            <source src={introVideo} type="video/mp4">
+        </video>
+    </div>
+    <div class="content-section">
+        <Image src={LogoImg} alt="" height={250} />
+        <div class="hero">
+            <p>¡Preparate para la aventura de tu vida!</p>
+            <div class="buttons">
+                <Button title="Descarga ya!" />
+                <Button title="Seguir leyendo" />
+            </div>
+        </div>
+    </div>
 </section>
 <style>
-    .content-section {
+    #home{
+        min-height: 600px;
+        position: relative;
         display: flex;
-        flex-wrap: wrap;
-        padding: 2rem;
-        align-items: center;
     }
 
+    .fullscreen-bg {
+        position: fixed;
+        top: -60px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        z-index:-100;
+        display: flex;
+        justify-content: center;
+        background-color: black;
+    }
+
+    .fullscreen-video {
+        position: absolute;
+        top: 0;
+        height: 100%;
+    }
+
+
+    .content-section {
+        display: flex;
+        padding: 2rem;
+        align-items: center;
+        background-color: rgba(255,255,255,.1);
+        backdrop-filter: blur(5px);
+        height: auto;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .hero{
+        color: var(--white);
+        margin-top: 60px;
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .buttons{
+        margin-top: 3rem;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /*to delete */
     .section-dark {
-        background-color: #444;
-        color: #fff;
+        background-color: var(--lightblue);
+        color: var(--darkblue);
     }
 
     .section-light {
-        background-color: #f4f4f4;
-        color: #333;
+        background-color: var(--white);
+        color: var(--darkblue);
     }
 
     .content {

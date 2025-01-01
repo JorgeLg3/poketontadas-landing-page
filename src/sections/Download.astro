@@ -1,27 +1,34 @@
 ---
-import { Image } from "astro:assets";
-import LinkLienImg from "../assets/imgs/Link_and_Lien.jpg"
+import { Image, Picture } from "astro:assets";
+import GameboxImg from "../assets/imgs/gamebox.png"
+import Button from "../components/Button.astro";
 ---
-<section id="download" class="section section-light">
-    <h2>Disponible Próximamente</h2>
+<section id="download" class="section section-dark">
+    <h2 class="title">Disponible Próximamente</h2>
     <div  class="content-section">
         <div class="image-row">
             <div class="image-container">
-                <Image src={LinkLienImg} alt="Characters Img" width={300}/>
+                <Picture class:list={"image"} src={GameboxImg} alt="Characters Img" height={300}/>
             </div>
         </div>
         <div class="text-row">
             <div class="text-container">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repellat, excepturi ratione rerum rem esse omnis natus dolore! Magni, assumenda?</p>
+                <Button title="Descargar ya!" class="download-button"/>
             </div>
         </div>
     </div>
 </section>
 <style>
+    .title{
+        text-align: center;
+        margin-top: 2rem;
+    }
+
     .section{
         display: flex;
-        justify-content: center;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
     }
 
@@ -32,16 +39,16 @@ import LinkLienImg from "../assets/imgs/Link_and_Lien.jpg"
         padding: 1rem;
         align-items: center;
         justify-content: center;
+        gap: 1.5rem
     }
-
     .section-dark {
-        background-color: #444;
-        color: #fff;
+        background-color: var(--lightblue);
+        color: var(--darkblue);
     }
 
     .section-light {
-        background-color: #fff;
-        color: #333;
+        background-color: var(--white);
+        color: var(--darkblue);
     }
 
     .text-row{
@@ -49,9 +56,14 @@ import LinkLienImg from "../assets/imgs/Link_and_Lien.jpg"
     }
 
     .text-container {
-        /* border: #000 solid 1px;
-        border-radius: 3px; */
-        padding: 1.8rem;
+        color: var(--darkblue);
+        background-color: var(--white);
+        padding: 2rem;
+        border-radius: 3px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .text-container h2 {
@@ -63,33 +75,35 @@ import LinkLienImg from "../assets/imgs/Link_and_Lien.jpg"
     }
 
     .image-row{
-        margin-top: 10px;
-        padding: 3rem;
     }
 
     .image-container{
-        position: relative;
-        margin:auto;
-        max-width: 35rem;
+        /* background-color: yellow; */
+        display: flex;
+        justify-content: center;
     }
 
-    Image{
+    .image{
+        border-radius: 5px;
         margin-left: auto;
         margin-right: auto;
-        width: 100%;
-        border-radius: 0.5rem;
     }
 
     .content .text-row h2 {
         margin-bottom: 1rem;
     }
 
+    .download-button{
+        margin-top: 2rem;
+    }
+
     /* Responsive Design - full screen */
     @media (min-width: 768px) {
         .content-section {
-            flex-direction: row;
+            flex-direction: row-reverse;
             display: flex;
             gap: 16px;
+            padding: 3rem 2rem;
         }
 
         .text-row{
@@ -99,6 +113,11 @@ import LinkLienImg from "../assets/imgs/Link_and_Lien.jpg"
         .image-row{
             flex-basis: 50%;
             margin-top: 0;
+        }
+
+        .download-button{
+            align-self: flex-end;
+            margin-right: -70px;
         }
     }
 </style>

@@ -1,12 +1,12 @@
 ---
-import { Image } from "astro:assets";
+import { Image, Picture } from "astro:assets";
 import MapImg from "../assets/imgs/map.png"
 ---
 <section id="region" class="section section-dark">
     <div  class="content-section">
         <div class="image-row">
             <div class="image-container">
-                <Image src={MapImg} alt="Characters Img" width={300}/>
+                <Picture class:list={"image"} src={MapImg} alt="Characters Img"/>
             </div>
         </div>
         <div class="text-row">
@@ -31,16 +31,17 @@ import MapImg from "../assets/imgs/map.png"
         padding: 1rem;
         align-items: center;
         justify-content: center;
+        gap: 1.5rem
     }
 
     .section-dark {
-        background-color: #444;
-        color: #fff;
+        background-color: var(--lightblue);
+        color: var(--darkblue);
     }
 
     .section-light {
-        background-color: #fff;
-        color: #333;
+        background-color: var(--white);
+        color: var(--darkblue);
     }
 
     .text-row{
@@ -48,8 +49,8 @@ import MapImg from "../assets/imgs/map.png"
     }
 
     .text-container {
-        color: #000;
-        background-color: #fff;
+        color: var(--darkblue);
+        background-color: var(--white);
         padding: 2rem;
         border-radius: 3px;
     }
@@ -63,22 +64,19 @@ import MapImg from "../assets/imgs/map.png"
     }
 
     .image-row{
-        margin-top: 10px;
-        padding: 3rem 0;
     }
 
     .image-container{
-        position: relative;
-        margin:auto;
-        max-width: 35rem;
-        background-color: yellow;
+        /* background-color: yellow; */
     }
 
-    Image{
+    .image{
         margin-left: auto;
         margin-right: auto;
-        width: 100%;
         border-radius: 5px;
+        width: 100%;
+        height: 100%;
+        max-height: 270px;
     }
 
     .content .text-row h2 {
