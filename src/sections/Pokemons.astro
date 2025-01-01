@@ -1,24 +1,50 @@
 ---
 import { Image, Picture } from "astro:assets";
-import InicialAguaImg from "../assets/imgs/inicial_agua.png"
-import InicialFuegoImg from "../assets/imgs/inicial_fuego.png"
-import InicialPlantaImg from "../assets/imgs/inicial_planta.png"
+import { getCollection, getEntry } from 'astro:content';
+
+// Get a single entry from a collection.
+// Requires the name of the collection and `id`
+const seahopData = await getEntry('pokemon', 'seahop');
+const calflameData = await getEntry('pokemon', 'calflame');
+const vernileafData = await getEntry('pokemon', 'vernileaf');
+
+import InicialAguaImg from "../assets/imgs/inicial_agua.png";
+import InicialFuegoImg from "../assets/imgs/inicial_fuego.png";
+import InicialPlantaImg from "../assets/imgs/inicial_planta.png";
 ---
 <section id="pokemon" class="section section-light">
     <div  class="content-section">
         <div class="image-row">
             <div class="triangle-top">
-                <div class="image-container">
-                    <Picture class:list={"image"} src={InicialPlantaImg} alt="Characters Img" width={150}/>
-                </div>
+                <a href={`/pokemon/${vernileafData?.id}`} class="image-container">
+                    <Picture
+                        transition:name={"img-vernileaf"}
+                        class:list={"image"} 
+                        src={InicialPlantaImg} 
+                        alt="vernileaf" 
+                        width={150}
+                    />
+                </a>
             </div>
             <div class="triangle-bottom">
-                <div class="image-container">
-                    <Picture class:list={"image"} src={InicialAguaImg} alt="Characters Img" width={150}/>
-                </div>
-                <div class="image-container">
-                    <Picture class:list={"image"} src={InicialFuegoImg} alt="Characters Img" width={150}/>
-                </div>
+                <a href={`/pokemon/${seahopData?.id}`} class="image-container">
+                    <Picture 
+                        transition:name={"img-seahop"}
+                        class:list={"image"} 
+                        src={InicialAguaImg} 
+                        alt="seahop" 
+                        width={150}
+                    />
+                </a>
+                <a href={`/pokemon/${calflameData?.id}`} class="image-container">
+                    <Picture
+                        transition:name={"img-calflame"}
+                        class:list={"image"} 
+                        src={InicialFuegoImg} 
+                        alt="calflame" 
+                        width={150}
+                    />
+                </a>
             </div>
             <!-- <div class="image-container">
                 <Image src={InicialAguaImg} alt="Characters Img" width={100}/>
