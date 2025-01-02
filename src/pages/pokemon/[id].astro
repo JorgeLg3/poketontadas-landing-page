@@ -14,24 +14,133 @@ export async function getStaticPaths() {
 // 2. For your template, you can get the entry directly from the prop
 const { pokemon } = Astro.props;
 const { data, id } = pokemon;
-const { name, description, img,  } = data;
+const { name, description, img, category, abilities, types, weight, height } = data;
 
 const { Content } = await render(pokemon);
 ---
 <Layout>
-  <div>
-    <h1>{name}</h1>
-    <img 
-      class:list={"image"}
-      transition:name={`img-${id}`}
-      src={`/img/${img}`} 
-      alt="vernileaf" 
-    />
-    <a href='/#pokemon' class="hover:underline opacity-70">← Volver atrás</a>
-  </div>
+  <div class="pokemon-page">
+    <div class="content">
+      <div class="main-info">
+        <div class="img-row">
+          <img 
+            class:list={"image"}
+            transition:name={`img-${id}`}
+            src={`/img/${img}`} 
+            alt="vernileaf" 
+          />
+        </div>
+        <div class="text-row">
+          <div class="text-container">
+            <h1>{name}</h1>
+            <p class="description">{description}</p>
+          </div>
+        </div>
+      </div>
+      <div class="tags-container">
+        <div class="tag">
+          <div class="label">Categoría</div>
+          <div class="values">{category}</div>
+        </div>
+        <div class="tag">
+          <div class="label">Tipo</div>
+          <div class="values">
+            {types}
+            <!-- {types.map((type) => {
+              <div>{type}</div>
+            })} -->
+          </div>
+        </div>
+        <div class="tag">
+          <div class="label">Altura</div>
+          <div class="values">{height} m</div>
+        </div>
+        <div class="tag">
+          <div class="label">Peso</div>
+          <div class="values">{weight} kg</div>
+        </div>
+        <div class="tag">
+          <div class="label">Habilidad</div>
+          <div class="values">
+            {abilities}
+            <!-- {abilities.map((ability) => {
+              <div>{ability}</div>
+            })} -->
+          </div>
+        </div>
+      </div>
+      <a href='/#pokemon' class="return-button">← Volver atrás</a>
+    </div>
+    </div>
 </Layout>
 <style>
+  .pokemon-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--darkblue);
+    padding: 1rem 1.5rem;
+  }
+  .content{
+    max-width: 960px;
+  }
+  .main-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .image-row{
+
+  }
+  .image-container{
+
+  }
   .image{
     scroll-behavior: auto;
+  }
+  .text-row{
+    display: flex;
+  }
+  .text-container{
+  }
+  .tags-container{
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+  .tag{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .label{
+    color: var(--white);
+    background-color: var(--lightblue);
+    padding: 0.3rem 1rem;
+    min-width: 100px;
+    text-align: center;
+    font-weight: 500;
+  }
+  .return-button{
+    color: var(--accent);
+    align-self: flex-start;
+
+  }
+  @media (min-width: 768px) {
+    .main-info{
+      flex-direction: row;
+    }
+    .image-row{
+      flex-basis: 40%;
+    }
+    .text-row{
+      flex-basis: 60%;
+    }
   }
 </style>
