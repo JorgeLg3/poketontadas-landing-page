@@ -1,5 +1,4 @@
 ---
-import { Image, Picture } from "astro:assets";
 import { getCollection, getEntry } from 'astro:content';
 
 // Get a single entry from a collection.
@@ -7,20 +6,16 @@ import { getCollection, getEntry } from 'astro:content';
 const seahopData = await getEntry('pokemon', 'seahop');
 const calflameData = await getEntry('pokemon', 'calflame');
 const vernileafData = await getEntry('pokemon', 'vernileaf');
-
-import InicialAguaImg from "../assets/imgs/inicial_agua.png";
-import InicialFuegoImg from "../assets/imgs/inicial_fuego.png";
-import InicialPlantaImg from "../assets/imgs/inicial_planta.png";
 ---
 <section id="pokemon" class="section section-light">
     <div  class="content-section">
         <div class="image-row">
             <div class="triangle-top">
                 <a href={`/pokemon/${vernileafData?.id}`} class="image-container">
-                    <Picture
+                    <img
                         transition:name={"img-vernileaf"}
                         class:list={"image"} 
-                        src={InicialPlantaImg} 
+                        src={`/img/${vernileafData?.data.img}`} 
                         alt="vernileaf" 
                         width={150}
                     />
@@ -28,19 +23,19 @@ import InicialPlantaImg from "../assets/imgs/inicial_planta.png";
             </div>
             <div class="triangle-bottom">
                 <a href={`/pokemon/${seahopData?.id}`} class="image-container">
-                    <Picture 
+                    <img
                         transition:name={"img-seahop"}
                         class:list={"image"} 
-                        src={InicialAguaImg} 
+                        src={`/img/${seahopData?.data.img}`} 
                         alt="seahop" 
                         width={150}
                     />
                 </a>
                 <a href={`/pokemon/${calflameData?.id}`} class="image-container">
-                    <Picture
+                    <img
                         transition:name={"img-calflame"}
                         class:list={"image"} 
-                        src={InicialFuegoImg} 
+                        src={`/img/${calflameData?.data.img}`} 
                         alt="calflame" 
                         width={150}
                     />
