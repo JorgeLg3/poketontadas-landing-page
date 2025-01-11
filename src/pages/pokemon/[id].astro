@@ -3,6 +3,8 @@ import { getCollection, render } from "astro:content";
 import { Image, Picture } from "astro:assets";
 import Layout from '../../layouts/Layout.astro';
 
+const pokemonList = await getCollection('pokemon');
+
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
   const pokemons = await getCollection('pokemon');
@@ -71,7 +73,26 @@ const { Content } = await render(pokemon);
       </div>
       <a href='/#pokemon' class="return-button">← Volver atrás</a>
     </div>
+  </div>
+  <div class="pokemon-list-container">
+    <div class="pokemon-list-content">
+      <ul>
+        {pokemonList.map(pokemon => (
+          <li>
+            <div class="pokemon-card">
+              <a href={`/pokemon/${pokemon.id}`}>
+                <img 
+                  class:list={"image"}
+                  src={`/img/${pokemon.data.img}`} 
+                  alt={pokemon.data.name}
+                />
+              </a>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
+  </div>
 </Layout>
 <style>
   .pokemon-page{
@@ -89,6 +110,8 @@ const { Content } = await render(pokemon);
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    column-gap: 2rem;
+    max-width: 720px;
   }
   .image-row{
 
@@ -130,11 +153,49 @@ const { Content } = await render(pokemon);
   .return-button{
     color: var(--accent);
     align-self: flex-start;
-
+    transition: 0.3s;
+  }
+  .return-button:hover{
+    text-decoration: underline;
+  }
+  .pokemon-list-container{
+    background-color: var(--lightblue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .pokemon-list-content{
+    max-width: 960px;
+    padding: 2rem;
+  }
+  .pokemon-list-content ul{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .pokemon-card{
+    background-color: var(--white);
+    border-radius: 8px;
+    max-width: 150px;
+    max-height: 150px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  }
+  .pokemon-card:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+  }
+  .pokemon-card img{
+    height: 100%;
+    width: 100%;
   }
   @media (min-width: 768px) {
     .main-info{
       flex-direction: row;
+    }
+    .pokemon-page{
+      min-height: 490px;
+      justify-content: center;
     }
     .image-row{
       flex-basis: 40%;
