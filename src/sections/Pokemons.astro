@@ -11,7 +11,7 @@ const vernileafData = await getEntry('pokemon', 'vernileaf');
     <div  class="content-section">
         <div class="image-row">
             <div class="triangle-top">
-                <a href={`/pokemon/${vernileafData?.id}`} class="image-container">
+                <a href={`/pokemon/${vernileafData?.id}`} class="image-container" data-aos="zoom-in" data-aos-anchor-placement="bottom-bottom">
                     <img
                         transition:name={"img-vernileaf"}
                         class:list={"image"} 
@@ -22,7 +22,7 @@ const vernileafData = await getEntry('pokemon', 'vernileaf');
                 </a>
             </div>
             <div class="triangle-bottom">
-                <a href={`/pokemon/${seahopData?.id}`} class="image-container">
+                <a href={`/pokemon/${seahopData?.id}`} class="image-container" data-aos="zoom-in" data-aos-anchor-placement="bottom-bottom">
                     <img
                         transition:name={"img-seahop"}
                         class:list={"image"} 
@@ -31,7 +31,7 @@ const vernileafData = await getEntry('pokemon', 'vernileaf');
                         width={150}
                     />
                 </a>
-                <a href={`/pokemon/${calflameData?.id}`} class="image-container">
+                <a href={`/pokemon/${calflameData?.id}`} class="image-container" data-aos="zoom-in" data-aos-anchor-placement="bottom-bottom">
                     <img
                         transition:name={"img-calflame"}
                         class:list={"image"} 
@@ -45,9 +45,9 @@ const vernileafData = await getEntry('pokemon', 'vernileaf');
                 <Image src={InicialAguaImg} alt="Characters Img" width={100}/>
             </div> -->
         </div>
-        <div class="accent-line"></div>
+        <div class="accent-line"  data-aos="fade-left" data-aos-anchor-placement="center-bottom"></div>
         <div class="text-row">
-            <div class="text-container">
+            <div class="text-container" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                 <h2>Descubre los nuevos Pokémon</h2>
                 <p>
                     Tontaria esta habita por especies Pokémon únicas, nunca antes vistas.

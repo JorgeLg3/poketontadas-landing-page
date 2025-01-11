@@ -32,14 +32,14 @@ const { Content } = await render(pokemon);
             alt="vernileaf" 
           />
         </div>
-        <div class="text-row">
+        <div class="text-row" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
           <div class="text-container">
             <h1>{name}</h1>
             <p class="description">{description}</p>
           </div>
         </div>
       </div>
-      <div class="tags-container">
+      <div class="tags-container"  data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
         <div class="tag">
           <div class="label">Categoría</div>
           <div class="values">{category}</div>
@@ -78,7 +78,7 @@ const { Content } = await render(pokemon);
     <div class="pokemon-list-content">
       <ul>
         {pokemonList.map(pokemon => (
-          <li>
+          <li  data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
             <div class="pokemon-card">
               <a href={`/pokemon/${pokemon.id}`}>
                 <img 

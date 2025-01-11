@@ -4,12 +4,12 @@ import MapImg from "../assets/imgs/map.png"
 ---
 <section id="region" class="section section-dark">
     <div  class="content-section">
-        <div class="image-row">
+        <div class="image-row" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom">
             <div class="image-container">
                 <Picture class:list={"image"} src={MapImg} alt="Characters Img"/>
             </div>
         </div>
-        <div class="text-row">
+        <div class="text-row" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
             <div class="text-container">
                 <h2>Explora la Región de Tontaria</h2>
                 <div class="accent-line"></div>
@@ -77,6 +77,7 @@ import MapImg from "../assets/imgs/map.png"
     }
 
     .image-row{
+        z-index: 1;
     }
 
     .image-container{
