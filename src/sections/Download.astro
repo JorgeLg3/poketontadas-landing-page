@@ -104,6 +104,10 @@ import Button from "../components/Button.astro";
         color: var(--accent);
     }
 
+    .guide-link:hover{
+        text-decoration: underline;
+    }
+
     .download-button{
         margin-top: 2rem;
         background-color: var(--accent);
@@ -118,8 +122,9 @@ import Button from "../components/Button.astro";
     }
 
     .download-button:hover {
-        /* background-color: var(--accent2); */
-        background-color: var(--accent);
+        background-color: var(--accent2);
+        transform: scale(1.1);
+        transition: 0.2s;
     }
 
     /* Responsive Design - full screen */
