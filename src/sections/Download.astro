@@ -18,9 +18,8 @@ import Button from "../components/Button.astro";
                     El mundo de los Pokémon te espera: 
                     entrena a tu equipo, recorre la Región de Tontaria y disfruta de las nuevas funcionalidades multijugador.
                 </p>
-                <p><a href="guia_del_juego.pdf" target="_blank">Guía del juego</a> en PDF ya disponible</p>
+                <p><a href="guia_del_juego.pdf" target="_blank" class="guide-link">Guía del juego</a> en PDF ya disponible</p>
                 <Button title="Descarga" class="download-button"/>
-                <span class="alert">Lanzamiento el 10/01/25</span>
             </div>
         </div>
     </div>
@@ -100,10 +99,13 @@ import Button from "../components/Button.astro";
         margin-bottom: 1rem;
     }
 
+    .guide-link{
+        color: var(--accent);
+    }
+
     .download-button{
         margin-top: 2rem;
         background-color: var(--accent);
-        filter: blur(2px);
         position: relative;
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
     }
@@ -117,7 +119,6 @@ import Button from "../components/Button.astro";
     .download-button:hover {
         /* background-color: var(--accent2); */
         background-color: var(--accent);
-        cursor:default;
     }
 
     /* Responsive Design - full screen */
