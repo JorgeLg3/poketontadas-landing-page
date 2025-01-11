@@ -78,8 +78,8 @@ const { Content } = await render(pokemon);
     <div class="pokemon-list-content">
       <ul>
         {pokemonList.map(pokemon => (
-          <li  data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-            <div class="pokemon-card">
+          <li>
+            <div class="pokemon-card" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
               <a href={`/pokemon/${pokemon.id}`}>
                 <img 
                   class:list={"image"}
