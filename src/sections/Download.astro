@@ -18,12 +18,32 @@ import Button from "../components/Button.astro";
                     El mundo de los Pokémon te espera: 
                     entrena a tu equipo, recorre la Región de Tontaria y disfruta de las nuevas funcionalidades multijugador.
                 </p>
-                <Button title="Descarga" class="download-button"/>
-                <span class="alert">Lanzamiento el 10/01/25</span>
+                <p><a href="guia_del_juego.pdf" target="_blank" class="guide-link">Guía del juego</a> en PDF ya disponible</p>
+                <!-- Update the id with the id of the file you want to share, and ensure the security preferences are in "vaialbale for everyone with the link" -->
+                <Button title="Descarga" class="download-button" target="_blank" hreference="https://drive.google.com/uc?export=download&id=1NSTlnOGrg0iVL8AyJiyUge4iiXC_Kqd_"/>
             </div>
         </div>
     </div>
 </section>
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const button = document.querySelector('.download-button');
+  
+      button.addEventListener('click', (event) => {
+        const buttonElement = event.target;
+  
+        // Change the button text and behavior
+        buttonElement.textContent = 'Descargando...';
+        buttonElement.classList.add('disabled');
+  
+        // Simulate a delay for the download
+        setTimeout(() => {
+          buttonElement.textContent = 'Descarga'; // Revert the text after downloading
+          buttonElement.classList.remove('disabled');
+        }, 3000); 
+      });
+    });
+</script>
 <style>
     .title{
         text-align: center;
@@ -99,10 +119,17 @@ import Button from "../components/Button.astro";
         margin-bottom: 1rem;
     }
 
+    .guide-link{
+        color: var(--accent);
+    }
+
+    .guide-link:hover{
+        text-decoration: underline;
+    }
+
     .download-button{
         margin-top: 2rem;
         background-color: var(--accent);
-        filter: blur(2px);
         position: relative;
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
     }
@@ -114,9 +141,19 @@ import Button from "../components/Button.astro";
     }
 
     .download-button:hover {
-        /* background-color: var(--accent2); */
-        background-color: var(--accent);
-        cursor:default;
+        background-color: var(--accent2);
+        transform: scale(1.1);
+        transition: 0.2s;
+    }
+    .download-button.disabled {
+        background-color: #8b4a4a; /* Gray out the button */
+        cursor: not-allowed;
+        pointer-events: none;
+        transition: 0.2s;
+        text-transform: capitalize;
+    }
+    .disabled:hover{
+
     }
 
     /* Responsive Design - full screen */
