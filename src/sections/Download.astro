@@ -25,6 +25,25 @@ import Button from "../components/Button.astro";
         </div>
     </div>
 </section>
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const button = document.querySelector('.download-button');
+  
+      button.addEventListener('click', (event) => {
+        const buttonElement = event.target;
+  
+        // Change the button text and behavior
+        buttonElement.textContent = 'Descargando...';
+        buttonElement.classList.add('disabled');
+  
+        // Simulate a delay for the download
+        setTimeout(() => {
+          buttonElement.textContent = 'Descarga'; // Revert the text after downloading
+          buttonElement.classList.remove('disabled');
+        }, 3000); 
+      });
+    });
+</script>
 <style>
     .title{
         text-align: center;
@@ -125,6 +144,16 @@ import Button from "../components/Button.astro";
         background-color: var(--accent2);
         transform: scale(1.1);
         transition: 0.2s;
+    }
+    .download-button.disabled {
+        background-color: #8b4a4a; /* Gray out the button */
+        cursor: not-allowed;
+        pointer-events: none;
+        transition: 0.2s;
+        text-transform: capitalize;
+    }
+    .disabled:hover{
+
     }
 
     /* Responsive Design - full screen */
